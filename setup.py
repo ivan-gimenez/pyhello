@@ -1,4 +1,7 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+
+with open("requirements.txt") as f:
+    requirements = f.read().splitlines()
 
 setup(name='pyhello',
       version='0.1',
@@ -8,4 +11,6 @@ setup(name='pyhello',
       author_email='ivan.gimenez@example.com',
       license='MIT',
       packages=['pyhello'],
-      zip_safe=False)
+      zip_safe=False,
+      install_requires=requirements,
+      )
